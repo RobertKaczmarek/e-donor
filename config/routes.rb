@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'home#index'
+
+  devise_for :donors, path: 'donors', controllers: {
+    registrations: 'donors/registrations'
+  }
+
+  namespace :donors do
+    root to: 'dashboard#index'
+  end
 end

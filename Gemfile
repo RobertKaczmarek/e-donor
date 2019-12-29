@@ -23,6 +23,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'haml'
 gem 'haml-rails'
 
+gem 'devise'
 
 group :development, :test do
   gem 'pry'
