@@ -37,8 +37,7 @@
               -#%span or
               -#.line.r
             = simple_form_for resource, url: registration_path(resource), class: 'register-form' do |f|
-              = f.text_field :first_name, class: 'form-control', placeholder: 'First name'
-              = f.text_field :last_name, class: 'form-control', placeholder: 'Last name'
+              = f.text_field :name, class: 'form-control', placeholder: 'Name'
               = f.email_field :email, class: 'form-control', placeholder: 'Email'
               = f.password_field :password, class: 'form-control', placeholder: 'Password', autocomplete: 'new-password'
               = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation', autocomplete: 'new-password'
