@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title EDonor
+    = csrf_meta_tags
+    = csp_meta_tag
+    / Fonts and icons
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Montserrat:400,700,200'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'paper-dashboard', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'bootstrap', 'data-turbolinks-track': 'reload'
+  %body
+    .wrapper
+      = render 'layouts/donors/sidebar'
+      .main-panel
+        = render 'layouts/donors/navbar'
+        .content
+          = yield
+        = render 'layouts/donors/footer'

@@ -1,0 +1,24 @@
+.page-header{ style: "background-image: url(#{asset_pack_path('media/images/login-image.jpg')});"}
+  .filter
+  .container
+    .row
+      .col-lg-4.ml-auto.mr-auto
+        .card.card-login
+          %h3.title.mx-auto Forgot your password?
+          -#.social-line.text-center
+            %a.btn.btn-neutral.btn-facebook.btn-just-icon{:href => "#pablo"}
+              %i.fa.fa-facebook-square
+            %a.btn.btn-neutral.btn-google.btn-just-icon{:href => "#pablo"}
+              %i.fa.fa-google-plus
+            %a.btn.btn-neutral.btn-twitter.btn-just-icon{:href => "#pablo"}
+              %i.fa.fa-twitter
+          = simple_form_for resource, url: donor_password_path(resource), html: { method: :post }, class: 'login-form' do |f|
+            = render 'devise/shared/error_messages', resource: resource
+            = f.label :email
+            = f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true, autocomplete: 'email'
+            - if devise_mapping.rememberable?
+              = f.check_box :remember_me
+              = f.label :remember_me
+            = f.submit 'Reset password', class: 'btn btn-danger btn-block btn-round'
+          = render 'donors/shared/links'
+  = render 'layouts/donors/signup_footer'

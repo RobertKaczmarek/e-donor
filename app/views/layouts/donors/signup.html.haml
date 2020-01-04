@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title EDonor
+    = csrf_meta_tags
+    = csp_meta_tag
+    / Fonts and icons
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Montserrat:400,700,200'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css'
+    = javascript_pack_tag 'signup', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'bootstrap', 'data-turbolinks-track': 'reload'
+  %body.register-page.full-screen.sidebar-collapse
+    = yield

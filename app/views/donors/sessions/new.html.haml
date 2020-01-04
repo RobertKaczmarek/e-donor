@@ -1,0 +1,26 @@
+.page-header{ style: "background-image: url(#{asset_pack_path('media/images/login-image.jpg')});"}
+  .filter
+  .container
+    .row
+      .col-lg-4.ml-auto.mr-auto
+        .card.card-login
+          %h3.title.mx-auto Welcome
+          -#.social-line.text-center
+            %a.btn.btn-neutral.btn-facebook.btn-just-icon{:href => "#pablo"}
+              %i.fa.fa-facebook-square
+            %a.btn.btn-neutral.btn-google.btn-just-icon{:href => "#pablo"}
+              %i.fa.fa-google-plus
+            %a.btn.btn-neutral.btn-twitter.btn-just-icon{:href => "#pablo"}
+              %i.fa.fa-twitter
+          = simple_form_for resource, url: session_path(resource), class: 'login-form' do |f|
+            = f.label :email
+            = f.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true, autocomplete: 'email'
+            = f.label :password
+            = f.password_field :password, class: 'form-control', placeholder: 'Password', autocomplete: 'current-password'
+            - if devise_mapping.rememberable?
+              = f.check_box :remember_me
+              = f.label :remember_me
+            = f.submit 'Log in', class: 'btn btn-danger btn-block btn-round'
+          = render 'donors/shared/links'
+
+  = render 'layouts/donors/signup_footer'
