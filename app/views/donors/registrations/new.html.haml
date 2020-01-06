@@ -39,6 +39,7 @@
             = simple_form_for resource, url: registration_path(resource), class: 'register-form' do |f|
               = f.text_field :first_name, class: 'form-control', placeholder: 'First name'
               = f.text_field :last_name, class: 'form-control', placeholder: 'Last name'
+              = f.input :blood_type, collection: Donor.blood_types, class: 'form-control', prompt: 'Blood type'
               = f.email_field :email, class: 'form-control', placeholder: 'Email'
               = f.password_field :password, class: 'form-control', placeholder: 'Password', autocomplete: 'new-password'
               = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation', autocomplete: 'new-password'

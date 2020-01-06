@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_01_06_131439) do
     t.datetime "remember_created_at"
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
+    t.integer "blood_type", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_donors_on_email", unique: true
