@@ -1,0 +1,28 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        .text-right
+          = link_to 'New Donation', new_donors_donation_path, class: 'btn btn-round btn-primary btn-sm'
+        %h4.card-title= 'Listing Donations'
+      .card-body
+        .table-responsive
+          %table.table
+            %thead.text-primary
+              %tr
+              %th Blood collection facility
+              %th Date
+              %th Attended
+              %th.text-right
+              %th.text-right
+              %th.text-right
+          %tbody
+            - @donations.each do |donation|
+              %tr
+                %td= donation.blood_collection_facility
+                %td= donation.date
+                %td= donation.attended
+                %td.text-right= link_to 'Show', donation
+                %td.text-right= link_to 'Edit', edit_donors_donation_path(donation)
+                %td.text-right= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' }
+

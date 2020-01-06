@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :donors do
     root to: 'dashboard#index'
 
-    resources :appointments
+    resources :donations
   end
 
   devise_for :medical_entities, path: 'medical_entities', controllers: {

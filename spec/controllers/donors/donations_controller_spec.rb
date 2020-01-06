@@ -23,10 +23,10 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe Donors::AppointmentsController, type: :controller do
+RSpec.describe Donors::DonationsController, type: :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Donors::Appointment. As you add validations to Donors::Appointment, be sure to
+  # Donors::Donation. As you add validations to Donors::Donation, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -38,12 +38,12 @@ RSpec.describe Donors::AppointmentsController, type: :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # Donors::AppointmentsController. Be sure to keep this updated too.
+  # Donors::DonationsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET #index" do
     it "returns a success response" do
-      Donors::Appointment.create! valid_attributes
+      Donors::Donation.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_successful
     end
@@ -51,8 +51,8 @@ RSpec.describe Donors::AppointmentsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      appointment = Donors::Appointment.create! valid_attributes
-      get :show, params: {id: appointment.to_param}, session: valid_session
+      donation = Donors::Donation.create! valid_attributes
+      get :show, params: {id: donation.to_param}, session: valid_session
       expect(response).to be_successful
     end
   end
@@ -66,29 +66,29 @@ RSpec.describe Donors::AppointmentsController, type: :controller do
 
   describe "GET #edit" do
     it "returns a success response" do
-      appointment = Donors::Appointment.create! valid_attributes
-      get :edit, params: {id: appointment.to_param}, session: valid_session
+      donation = Donors::Donation.create! valid_attributes
+      get :edit, params: {id: donation.to_param}, session: valid_session
       expect(response).to be_successful
     end
   end
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Donors::Appointment" do
+      it "creates a new Donors::Donation" do
         expect {
-          post :create, params: {donors_appointment: valid_attributes}, session: valid_session
-        }.to change(Donors::Appointment, :count).by(1)
+          post :create, params: {donors_donation: valid_attributes}, session: valid_session
+        }.to change(Donors::Donation, :count).by(1)
       end
 
-      it "redirects to the created donors_appointment" do
-        post :create, params: {donors_appointment: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Donors::Appointment.last)
+      it "redirects to the created donors_donation" do
+        post :create, params: {donors_donation: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(Donors::Donation.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {donors_appointment: invalid_attributes}, session: valid_session
+        post :create, params: {donors_donation: invalid_attributes}, session: valid_session
         expect(response).to be_successful
       end
     end
@@ -100,41 +100,41 @@ RSpec.describe Donors::AppointmentsController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested donors_appointment" do
-        appointment = Donors::Appointment.create! valid_attributes
-        put :update, params: {id: appointment.to_param, donors_appointment: new_attributes}, session: valid_session
-        appointment.reload
+      it "updates the requested donors_donation" do
+        donation = Donors::Donation.create! valid_attributes
+        put :update, params: {id: donation.to_param, donors_donation: new_attributes}, session: valid_session
+        donation.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the donors_appointment" do
-        appointment = Donors::Appointment.create! valid_attributes
-        put :update, params: {id: appointment.to_param, donors_appointment: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(appointment)
+      it "redirects to the donors_donation" do
+        donation = Donors::Donation.create! valid_attributes
+        put :update, params: {id: donation.to_param, donors_donation: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(donation)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        appointment = Donors::Appointment.create! valid_attributes
-        put :update, params: {id: appointment.to_param, donors_appointment: invalid_attributes}, session: valid_session
+        donation = Donors::Donation.create! valid_attributes
+        put :update, params: {id: donation.to_param, donors_donation: invalid_attributes}, session: valid_session
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested donors_appointment" do
-      appointment = Donors::Appointment.create! valid_attributes
+    it "destroys the requested donors_donation" do
+      donation = Donors::Donation.create! valid_attributes
       expect {
-        delete :destroy, params: {id: appointment.to_param}, session: valid_session
-      }.to change(Donors::Appointment, :count).by(-1)
+        delete :destroy, params: {id: donation.to_param}, session: valid_session
+      }.to change(Donors::Donation, :count).by(-1)
     end
 
-    it "redirects to the donors_appointments list" do
-      appointment = Donors::Appointment.create! valid_attributes
-      delete :destroy, params: {id: appointment.to_param}, session: valid_session
-      expect(response).to redirect_to(donors_appointments_url)
+    it "redirects to the donors_donations list" do
+      donation = Donors::Donation.create! valid_attributes
+      delete :destroy, params: {id: donation.to_param}, session: valid_session
+      expect(response).to redirect_to(donors_donations_url)
     end
   end
 

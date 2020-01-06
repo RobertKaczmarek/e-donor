@@ -1,5 +1,5 @@
 -# frozen_string_literal: true
-= simple_form_for @appointment, url: donors_appointments_path do |f|\
+= simple_form_for @donation, url: donors_donations_path do |f|\
   = f.hidden_field :donor_id, value: current_donor.id
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?

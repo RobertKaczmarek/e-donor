@@ -1,6 +1,6 @@
-class CreateAppointments < ActiveRecord::Migration[6.0]
+class CreateDonations < ActiveRecord::Migration[6.0]
   def change
-    create_table :appointments do |t|
+    create_table :donations do |t|
       t.references :donor, null: false, foreign_key: true
       t.references :blood_collection_facility, null: false, foreign_key: true
       t.datetime :date

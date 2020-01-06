@@ -34,10 +34,10 @@
               = link_to donors_root_path do
                 %i.nc-icon.nc-alert-circle-i
                 %p Dashboard
-            %li{ class: "#{'active' if current_path =~ /#{donors_appointments_path}/}" }
-              = link_to donors_appointments_path do
-                %i.nc-icon.nc-calendar-60
-                %p Appointments
+            %li{ class: "#{'active' if current_path =~ /#{donors_donations_path}/}" }
+              = link_to donors_donations_path do
+                %i.nc-icon.nc-favourite-28
+                %p Donations
             %li
               %a{:href => "./icons.html"}
                 %i.nc-icon.nc-diamond

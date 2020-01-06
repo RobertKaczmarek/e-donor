@@ -4,7 +4,7 @@ class Donor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :appointments, dependent: :destroy
+  has_many :donations, dependent: :destroy
 
   enum gender: %i[male female]
   enum blood_type: %i[A+ A- B+ B- O+ O- AB+ AB-]

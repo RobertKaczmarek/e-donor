@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Donors::Appointments", type: :request do
-  describe "GET /donors/appointments" do
+RSpec.describe "Donors::Donations", type: :request do
+  describe "GET /donors/donations" do
     it "works! (now write some real specs)" do
-      get donors_appointments_path
+      get donors_donations_path
       expect(response).to have_http_status(200)
     end
   end
