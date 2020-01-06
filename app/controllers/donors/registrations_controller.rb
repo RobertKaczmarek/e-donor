@@ -43,7 +43,8 @@ module Donors
 
     # If you have extra params to permit, append them to the sanitizer.
     def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name blood_type])
+      devise_parameter_sanitizer.
+        permit(:sign_up, keys: %i[first_name last_name gender blood_type])
     end
 
     # If you have extra params to permit, append them to the sanitizer.
