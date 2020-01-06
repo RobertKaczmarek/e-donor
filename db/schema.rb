@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_06_114453) do
+ActiveRecord::Schema.define(version: 2020_01_06_131439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.bigint "donor_id", null: false
+    t.bigint "blood_collection_facility_id", null: false
+    t.datetime "date"
+    t.boolean "attended", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["blood_collection_facility_id"], name: "index_appointments_on_blood_collection_facility_id"
+    t.index ["donor_id"], name: "index_appointments_on_donor_id"
+  end
 
   create_table "blood_collection_facilities", force: :cascade do |t|
     t.bigint "medical_entity_id", null: false
@@ -52,5 +63,7 @@ ActiveRecord::Schema.define(version: 2020_01_06_114453) do
     t.index ["reset_password_token"], name: "index_medical_entities_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "blood_collection_facilities"
+  add_foreign_key "appointments", "donors"
   add_foreign_key "blood_collection_facilities", "medical_entities"
 end

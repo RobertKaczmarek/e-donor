@@ -1,0 +1,28 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        .text-right
+          = link_to 'New Appointment', new_donors_appointment_path, class: 'btn btn-round btn-primary btn-sm'
+        %h4.card-title= 'Listing Appointments'
+      .card-body
+        .table-responsive
+          %table.table
+            %thead.text-primary
+              %tr
+              %th Blood collection facility
+              %th Date
+              %th Attended
+              %th.text-right
+              %th.text-right
+              %th.text-right
+          %tbody
+            - @appointments.each do |appointment|
+              %tr
+                %td= appointment.blood_collection_facility
+                %td= appointment.date
+                %td= appointment.attended
+                %td.text-right= link_to 'Show', appointment
+                %td.text-right= link_to 'Edit', edit_donors_appointment_path(appointment)
+                %td.text-right= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }
+

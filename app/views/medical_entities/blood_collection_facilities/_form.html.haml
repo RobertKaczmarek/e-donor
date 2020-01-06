@@ -10,7 +10,7 @@
   %br/
   .fields
     %h6= 'Opening hours:'
-    = f.fields_for :opening_hours do |form_hours|
+    = f.simple_fields_for :opening_hours do |form_hours|
       .row
         .col-md-3.pr-3
           .form-group
@@ -37,7 +37,7 @@
   %br/
   .fields
     %h6= 'Address'
-    = f.fields_for :address do |from_address|
+    = f.simple_fields_for :address do |from_address|
       .row
         .col-md-12.pr-3
           .form-group
