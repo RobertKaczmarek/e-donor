@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   }
   namespace :medical_entities do
     root to: 'dashboard#index'
+
+    resources :blood_collection_facilities
   end
 end

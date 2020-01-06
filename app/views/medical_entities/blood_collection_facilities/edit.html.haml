@@ -1,0 +1,11 @@
+.row
+  .col-md-12
+    .card.card-user
+      .card-header
+        %h5.card-title= 'Editing Blood collection facility'
+      .card-body
+        = render 'form'
+
+= link_to 'Show', @blood_collection_facility
+\|
+= link_to 'Back', medical_entities_blood_collection_facilities_path

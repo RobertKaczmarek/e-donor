@@ -1,0 +1,27 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        .text-right
+          = link_to 'New Blood collection facility', new_medical_entities_blood_collection_facility_path, class: 'btn btn-round btn-danger btn-sm'
+        %h4.card-title= 'Listing Blood collection facilities'
+      .card-body
+        .table-responsive
+          %table.table
+            %thead.text-primary
+              %tr
+              %th Name
+              %th Opening hours
+              %th Address
+              %th.text-right
+              %th.text-right
+              %th.text-right
+          %tbody
+            - @blood_collection_facilities.each do |blood_collection_facility|
+              %tr
+                %td= blood_collection_facility.name
+                %td= blood_collection_facility.opening_hours
+                %td= blood_collection_facility.address
+                %td.text-right= link_to 'Show', blood_collection_facility
+                %td.text-right= link_to 'Edit', edit_blood_collection_facility_path(blood_collection_facility)
+                %td.text-right= link_to 'Destroy', blood_collection_facility, method: :delete, data: { confirm: 'Are you sure?' }

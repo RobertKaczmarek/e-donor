@@ -2,6 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{ name: 'turbolinks-visit-control', content: 'reload' }
     %title EDonor
     = csrf_meta_tags
     = csp_meta_tag
@@ -29,14 +30,14 @@
               </div>
         .sidebar-wrapper
           %ul.nav
-            %li.active
-              %a{:href => "./dashboard.html"}
-                %i.nc-icon.nc-bank
+            %li{ class: "#{'active' if current_path == medical_entities_root_path}" }
+              = link_to medical_entities_root_path do
+                %i.nc-icon.nc-alert-circle-i
                 %p Dashboard
-            %li
-              %a{:href => "./icons.html"}
-                %i.nc-icon.nc-diamond
-                %p Icons
+            %li{ class: "#{'active' if current_path =~ /#{medical_entities_blood_collection_facilities_path}/}" }
+              = link_to medical_entities_blood_collection_facilities_path do
+                %i.nc-icon.nc-bank
+                %p Blood collection facilities
             %li
               %a{:href => "./map.html"}
                 %i.nc-icon.nc-pin-3

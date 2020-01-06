@@ -1,0 +1,58 @@
+-# frozen_string_literal: true
+= simple_form_for @blood_collection_facility, url: medical_entities_blood_collection_facilities_path do |f|\
+  = f.hidden_field :medical_entity_id, value: current_medical_entity.id
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  .row
+    .col-md-12.pr-3
+      .form-group
+        = f.input :name, input_html: { class: 'form-control' }
+  %br/
+  .fields
+    %h6= 'Opening hours:'
+    = f.fields_for :opening_hours do |form_hours|
+      .row
+        .col-md-3.pr-3
+          .form-group
+            = form_hours.input :monday, input_html: { class: 'form-control' }
+        .col-md-3.pr-3
+          .form-group
+            = form_hours.input :tuesday, input_html: { class: 'form-control' }
+        .col-md-3.pr-3
+          .form-group
+            = form_hours.input :wednesday, input_html: { class: 'form-control' }
+        .col-md-3.pr-3
+          .form-group
+            = form_hours.input :thursday, input_html: { class: 'form-control' }
+      .row
+        .col-md-3.pr-3
+          .form-group
+            = form_hours.input :friday, input_html: { class: 'form-control' }
+        .col-md-3.pr-3
+          .form-group
+            = form_hours.input :saturday, input_html: { class: 'form-control' }
+        .col-md-3.pr-3
+          .form-group
+            = form_hours.input :sunday, input_html: { class: 'form-control' }
+  %br/
+  .fields
+    %h6= 'Address'
+    = f.fields_for :address do |from_address|
+      .row
+        .col-md-12.pr-3
+          .form-group
+            = from_address.input :street, input_html: { class: 'form-control' }
+      .row
+        .col-md-4.pr-3
+          .form-group
+            = from_address.input :city, input_html: { class: 'form-control' }
+        .col-md-4.pr-3
+          .form-group
+            = from_address.input :state, input_html: { class: 'form-control' }
+        .col-md-4.pr-3
+          .form-group
+            = from_address.input :zip, input_html: { class: 'form-control' }
+
+  .row
+    .update.ml-auto.mr-auto
+      = f.button :submit, class: 'btn btn-success btn-round'
