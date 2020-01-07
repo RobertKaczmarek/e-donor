@@ -4,4 +4,5 @@ class Donation < ApplicationRecord
 
   scope :attended, -> { where attended: true }
   scope :latest, -> { order(created_at: :desc) }
+  scope :in_year, ->(year) { where('extract(year from created_at) = ?', year) }
 end

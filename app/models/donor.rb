@@ -16,4 +16,8 @@ class Donor < ApplicationRecord
       super(value)
     end
   end
+
+  def donation_per_year
+    male? ? 6 : 4
+  end
 end

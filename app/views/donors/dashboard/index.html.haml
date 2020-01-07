@@ -1,77 +1,57 @@
 .content
   .row
-    .col-lg-3.col-md-6.col-sm-6
+    .col-lg-4.col-md-6.col-sm-6
       .card.card-stats
         .card-body
           .row
             .col-5.col-md-4
               .icon-big.text-center.icon-warning
-                %i.nc-icon.nc-globe.text-warning
+                %i.nc-icon.nc-favourite-28.text-danger
             .col-7.col-md-8
               .numbers
-                %p.card-category Capacity
-                %p.card-title
-                  150GB
-                %p
-        .card-footer
-          %hr/
-          .stats
-            %i.fa.fa-refresh
-            Update Now
-    .col-lg-3.col-md-6.col-sm-6
-      .card.card-stats
-        .card-body
-          .row
-            .col-5.col-md-4
-              .icon-big.text-center.icon-warning
-                %i.nc-icon.nc-money-coins.text-success
-            .col-7.col-md-8
-              .numbers
-                %p.card-category Revenue
-                %p.card-title
-                  $ 1,345
-                %p
+                %p.card-category Next donation available
+                %p= next_donation
         .card-footer
           %hr/
           .stats
             %i.fa.fa-calendar-o
-            Last day
-    .col-lg-3.col-md-6.col-sm-6
+            = "Last donation: #{last_donation}"
+    .col-lg-4.col-md-6.col-sm-6
       .card.card-stats
         .card-body
           .row
             .col-5.col-md-4
               .icon-big.text-center.icon-warning
-                %i.nc-icon.nc-vector.text-danger
+                %i.nc-icon.nc-book-bookmark.text-info
             .col-7.col-md-8
               .numbers
-                %p.card-category Errors
+                %p.card-category Total donations
                 %p.card-title
-                  23
+                  = @donations.size
                 %p
         .card-footer
           %hr/
           .stats
-            %i.fa.fa-clock-o
-            In the last hour
-    .col-lg-3.col-md-6.col-sm-6
+            %i.fa.fa-heartbeat
+            = donations_left_in_year
+    .col-lg-4.col-md-6.col-sm-6
       .card.card-stats
         .card-body
           .row
             .col-5.col-md-4
               .icon-big.text-center.icon-warning
-                %i.nc-icon.nc-favourite-28.text-primary
+                %i.nc-icon.nc-zoom-split.text-danger
             .col-7.col-md-8
               .numbers
-                %p.card-category Followers
+                %p.card-category Total blood donated
                 %p.card-title
-                  +45K
+                  = "#{@donations.attended.size * 450} ml"
                 %p
         .card-footer
           %hr/
           .stats
-            %i.fa.fa-refresh
-            Update now
+            %i.fa.fa-tint
+            = "In #{Time.current.year}: #{@donations.attended.in_year(Time.current.year).size * 450} ml"
   .row
     .col-md-12
       .card
