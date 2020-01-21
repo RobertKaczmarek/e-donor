@@ -1,0 +1,21 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        %h4.card-title= 'Listing Blood collection facilities'
+      .card-body
+        .table-responsive
+          %table.table
+            %thead.text-primary
+              %tr
+              %th Name
+              %th Opening hours
+              %th Address
+              %th.text-right
+            %tbody
+              - @blood_collection_facilities.each do |blood_collection_facility|
+                %tr
+                  %td= blood_collection_facility.name
+                  %td= print_opening_hours blood_collection_facility.opening_hours
+                  %td= print_address blood_collection_facility.address
+                  %td.text-right= link_to 'Show', donors_blood_collection_facility_path(blood_collection_facility)

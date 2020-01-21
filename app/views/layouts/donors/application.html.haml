@@ -38,6 +38,10 @@
               = link_to donors_donations_path do
                 %i.nc-icon.nc-favourite-28
                 %p Donations
+            %li{ class: "#{'active' if current_path =~ /#{donors_blood_collection_facilities_path}/}" }
+              = link_to donors_blood_collection_facilities_path do
+                %i.nc-icon.nc-bank
+                %p Blood collection facilities
             %li
               %a{:href => "./icons.html"}
                 %i.nc-icon.nc-diamond

@@ -2,7 +2,7 @@
 
 %p
   %b Blood collection facility:
-  = @donation.blood_collection_facility
+  = link_to @donation.blood_collection_facility, donors_blood_collection_facility_path(@donation.blood_collection_facility)
 %p
   %b Date:
   = @donation.date

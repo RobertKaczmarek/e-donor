@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b Medical entity:
+  = @blood_collection_facility.medical_entity
+%p
+  %b Name:
+  = @blood_collection_facility.name
+%p
+  %b Opening hours:
+  = @blood_collection_facility.opening_hours
+%p
+  %b Address:
+  = @blood_collection_facility.address
+
+= link_to 'Back', donors_blood_collection_facilities_path

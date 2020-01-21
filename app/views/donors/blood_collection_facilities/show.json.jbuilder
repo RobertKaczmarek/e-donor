@@ -1,0 +1,1 @@
+json.partial! "medical_entities/blood_collection_facilities/blood_collection_facility", blood_collection_facility: @blood_collection_facility

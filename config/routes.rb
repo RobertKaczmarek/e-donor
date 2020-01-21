@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#index'
 
     resources :donations
+    resources :blood_collection_facilities, only: %i[index show]
   end
 
   devise_for :medical_entities, path: 'medical_entities', controllers: {
