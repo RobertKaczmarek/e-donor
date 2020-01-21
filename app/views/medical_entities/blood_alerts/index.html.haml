@@ -1,0 +1,25 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        .text-right
+          = link_to 'New Blood alert', new_medical_entities_blood_alert_path, class: 'btn btn-round btn-danger btn-sm'
+        %h4.card-title= 'Listing Blood collection facilities'
+      .card-body
+        .table-responsive
+          %table.table
+            %thead.text-primary
+              %tr
+              %th Blood collection facility
+              %th Blood type
+              %th.text-right
+              %th.text-right
+              %th.text-right
+            %tbody
+              - @blood_alerts.each do |blood_alert|
+                %tr
+                  %td= link_to blood_alert.blood_collection_facility, medical_entities_blood_collection_facility_path(blood_alert.blood_collection_facility)
+                  %td= blood_alert.blood_type
+                  %td.text-right= link_to 'Show', medical_entities_blood_alert_path(blood_alert)
+                  %td.text-right= link_to 'Edit', edit_medical_entities_blood_alert_path(blood_alert)
+                  %td.text-right= link_to 'Destroy', medical_entities_blood_collection_facilities_path(blood_alert), method: :delete, data: { confirm: 'Are you sure?' }

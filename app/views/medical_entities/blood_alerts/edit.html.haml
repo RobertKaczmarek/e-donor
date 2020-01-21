@@ -1,0 +1,11 @@
+.row
+  .col-md-12
+    .card.card-user
+      .card-header
+        %h5.card-title= 'Editing Blood alert'
+      .card-body
+        = render 'form'
+
+= link_to 'Show', medical_entities_blood_alert_path(@blood_alert)
+\|
+= link_to 'Back', medical_entities_blood_alerts_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Blood collection facility
+  = link_to @blood_alert.blood_collection_facility, medical_entities_blood_collection_facility_path(@blood_alert.blood_collection_facility)
+%p
+  %b Blood type:
+  = @blood_alert.blood_type
+
+= link_to 'Edit', edit_medical_entities_blood_alert_path(@blood_alert)
+\|
+= link_to 'Back', medical_entities_blood_alerts_path
