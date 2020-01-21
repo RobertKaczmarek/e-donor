@@ -1,6 +1,15 @@
 %p#notice= notice
 
+%p
+  %b Blood collection facility:
+  = @donation.blood_collection_facility
+%p
+  %b Date:
+  = @donation.date
+%p
+  %b Attended:
+  = @donation.attended
 
-= link_to 'Edit', edit_donors_donation_path(@donors_donation)
+= link_to 'Edit', edit_donors_donation_path(@donation)
 \|
 = link_to 'Back', donors_donations_path

@@ -29,7 +29,7 @@ module Donors
 
       respond_to do |format|
         if @donation.save
-          format.html { redirect_to donors_donations_path(@donation), notice: 'Donation was successfully created.' }
+          format.html { redirect_to donors_donation_path(@donation), notice: 'Donation was successfully created.' }
           format.json { render :show, status: :created, location: @donation }
         else
           format.html { render :new }
