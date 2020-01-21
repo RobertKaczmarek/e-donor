@@ -1,1 +1,9 @@
 @import '~bootstrap/dist/css/bootstrap';
+
+.blood-alert {
+  border-radius: 10px;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 3px solid #ef8157;
+}

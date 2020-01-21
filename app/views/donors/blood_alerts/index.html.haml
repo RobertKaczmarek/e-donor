@@ -1,0 +1,21 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        %h4.card-title= 'Listing Blood alerts'
+      .card-body
+        .table-responsive
+          %table.table
+            %thead.text-primary
+              %tr
+              %th Blood collection facility
+              %th Blood type
+              %th.text-right
+              %th.text-right
+              %th.text-right
+            %tbody
+              - @blood_alerts.each do |blood_alert|
+                %tr
+                  %td= link_to blood_alert.blood_collection_facility, donors_blood_collection_facility_path(blood_alert.blood_collection_facility)
+                  %td= blood_alert.blood_type
+                  %td.text-right= link_to 'Show', donors_blood_alert_path(blood_alert)

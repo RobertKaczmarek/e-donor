@@ -54,17 +54,18 @@
             = "In #{Time.current.year}: #{@donations.attended.in_year(Time.current.year).size * 450} ml"
   .row
     .col-md-12
-      .card
+      .card.card-stats
         .card-header
-          %h5.card-title Users Behavior
-          %p.card-category 24 Hours performance
+          %h5.card-title Blood alerts!
         .card-body
-          %canvas#chartHours{:height => "100", :width => "400"}
-        .card-footer
-          %hr/
-          .stats
-            %i.fa.fa-history
-            Updated 3 minutes ago
+          - @blood_alerts.each do |blood_alert|
+            = link_to donors_blood_collection_facility_path(blood_alert.blood_collection_facility) do
+              .row
+                .col-3.col-md-3
+                  .numbers.blood-alert
+                    %p.card-category= blood_alert.blood_collection_facility
+                    %p.card-title= blood_alert.blood_type
+                    %p
   .row
     .col-md-4
       .card

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     resources :donations
     resources :blood_collection_facilities, only: %i[index show]
+    resources :blood_alerts, only: %i[index show]
   end
 
   devise_for :medical_entities, path: 'medical_entities', controllers: {

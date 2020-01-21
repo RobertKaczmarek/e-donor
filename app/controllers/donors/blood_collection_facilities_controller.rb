@@ -1,6 +1,6 @@
 module Donors
   class BloodCollectionFacilitiesController < ApplicationController
-    before_action :set_blood_collection_facility, only: %i[show edit]
+    before_action :set_blood_collection_facility, only: %i[show]
 
     # GET /donors/blood_collection_facilities
     # GET /donors/blood_collection_facilities.json
