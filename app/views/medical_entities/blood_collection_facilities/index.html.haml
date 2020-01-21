@@ -16,12 +16,12 @@
               %th.text-right
               %th.text-right
               %th.text-right
-          %tbody
-            - @blood_collection_facilities.each do |blood_collection_facility|
-              %tr
-                %td= blood_collection_facility.name
-                %td= blood_collection_facility.opening_hours
-                %td= blood_collection_facility.address
-                %td.text-right= link_to 'Show', blood_collection_facility
-                %td.text-right= link_to 'Edit', edit_blood_collection_facility_path(blood_collection_facility)
-                %td.text-right= link_to 'Destroy', blood_collection_facility, method: :delete, data: { confirm: 'Are you sure?' }
+            %tbody
+              - @blood_collection_facilities.each do |blood_collection_facility|
+                %tr
+                  %td= blood_collection_facility.name
+                  %td= print_opening_hours blood_collection_facility.opening_hours
+                  %td= print_address blood_collection_facility.address
+                  %td.text-right= link_to 'Show', medical_entities_blood_collection_facility_path(blood_collection_facility)
+                  %td.text-right= link_to 'Edit', edit_medical_entities_blood_collection_facility_path(blood_collection_facility)
+                  %td.text-right= link_to 'Destroy', medical_entities_blood_collection_facilities_path(blood_collection_facility), method: :delete, data: { confirm: 'Are you sure?' }
