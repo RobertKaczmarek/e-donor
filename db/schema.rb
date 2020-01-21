@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_01_06_131439) do
     t.bigint "medical_entity_id", null: false
     t.string "name", default: "", null: false
     t.jsonb "opening_hours"
-    t.json "address"
+    t.jsonb "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["medical_entity_id"], name: "index_blood_collection_facilities_on_medical_entity_id"

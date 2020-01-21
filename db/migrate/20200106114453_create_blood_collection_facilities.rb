@@ -4,7 +4,7 @@ class CreateBloodCollectionFacilities < ActiveRecord::Migration[6.0]
       t.references :medical_entity, null: false, foreign_key: true
       t.string :name, null: false, default: ''
       t.jsonb :opening_hours
-      t.json :address
+      t.jsonb :address
 
       t.timestamps
     end
