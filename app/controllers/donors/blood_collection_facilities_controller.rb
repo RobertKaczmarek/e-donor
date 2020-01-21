@@ -2,14 +2,14 @@ module Donors
   class BloodCollectionFacilitiesController < ApplicationController
     before_action :set_blood_collection_facility, only: %i[show edit]
 
-    # GET /medical_entities/blood_collection_facilities
-    # GET /medical_entities/blood_collection_facilities.json
+    # GET /donors/blood_collection_facilities
+    # GET /donors/blood_collection_facilities.json
     def index
       @blood_collection_facilities = BloodCollectionFacility.all
     end
 
-    # GET /medical_entities/blood_collection_facilities/1
-    # GET /medical_entities/blood_collection_facilities/1.json
+    # GET /donors/blood_collection_facilities/1
+    # GET /donors/blood_collection_facilities/1.json
     def show
     end
 

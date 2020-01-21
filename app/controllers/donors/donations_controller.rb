@@ -72,7 +72,7 @@ module Donors
     # Never trust parameters from the scary internet, only allow the white list through.
     def donation_params
       params.require(:donation).
-        permit(:donor_id, :blood_collection_facility_id, :date, :attended)
+        permit(:donor_id, :blood_collection_facility_id, :date)
     end
   end
 end

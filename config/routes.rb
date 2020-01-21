@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     root to: 'dashboard#index'
 
     resources :blood_collection_facilities
+    resources :donations, only: %i[index show edit update destroy]
   end
 end

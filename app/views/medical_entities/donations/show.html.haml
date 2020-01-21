@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Patient's name
+  = @donation.donor.full_name
+%p
+  %b Blood collection facility:
+  = link_to @donation.blood_collection_facility, medical_entities_blood_collection_facility_path(@donation.blood_collection_facility)
+%p
+  %b Date:
+  = @donation.date
+%p
+  %b Attended:
+  = @donation.attended
+
+= link_to 'Edit', edit_medical_entities_donation_path(@donation)
+\|
+= link_to 'Back', medical_entities_donations_path

@@ -38,6 +38,10 @@
               = link_to medical_entities_blood_collection_facilities_path do
                 %i.nc-icon.nc-bank
                 %p Blood collection facilities
+            %li{ class: "#{'active' if current_path =~ /#{medical_entities_donations_path}/}" }
+              = link_to medical_entities_donations_path do
+                %i.nc-icon.nc-favourite-28
+                %p Donations
             %li
               %a{:href => "./map.html"}
                 %i.nc-icon.nc-pin-3

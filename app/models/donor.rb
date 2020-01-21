@@ -17,6 +17,10 @@ class Donor < ApplicationRecord
     end
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   def donation_per_year
     male? ? 6 : 4
   end

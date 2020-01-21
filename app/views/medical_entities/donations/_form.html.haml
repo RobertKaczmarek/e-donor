@@ -1,0 +1,20 @@
+-# frozen_string_literal: true
+= simple_form_for @donation, url: medical_entities_donations_path do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  .row
+    .col-md-10.pr-3
+      .form-group
+        = f.association :blood_collection_facility, input_html: { class: 'form-control' }
+  .row
+    .col-md-10
+      .form-group
+        #datetimepicker.input-group.date
+          = f.datetime_field :date, class: 'form-control datetimepicker'
+  .row
+    .col-md-10
+      .form-group
+        = f.input :attended, input_html: { class: 'form-control' }
+  .row
+    .update.ml-auto.mr-auto
+      = f.button :submit, class: 'btn btn-success btn-round'

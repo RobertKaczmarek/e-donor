@@ -1,0 +1,27 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        %h4.card-title= 'Listing Donations'
+      .card-body
+        .table-responsive
+          %table.table
+            %thead.text-primary
+              %tr
+              %th Patient's name
+              %th Blood collection facility
+              %th Date
+              %th Attended
+              %th.text-right
+              %th.text-right
+              %th.text-right
+            %tbody
+              - @donations.each do |donation|
+                %tr
+                  %td= donation.donor.full_name
+                  %td= donation.blood_collection_facility
+                  %td= donation.date
+                  %td= donation.attended
+                  %td.text-right= link_to 'Show', medical_entities_donation_path(donation)
+                  %td.text-right= link_to 'Edit', edit_medical_entities_donation_path(donation)
+                  %td.text-right= link_to 'Destroy', medical_entities_donation_path(donation), method: :delete, data: { confirm: 'Are you sure?' }
