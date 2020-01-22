@@ -46,34 +46,10 @@
               = link_to donors_blood_alerts_path do
                 %i.nc-icon.nc-user-run
                 %p Blood alerts
-            %li
-              %a{:href => "./icons.html"}
-                %i.nc-icon.nc-diamond
-                %p Icons
-            %li
-              %a{:href => "./map.html"}
-                %i.nc-icon.nc-pin-3
-                %p Maps
-            %li
-              %a{:href => "./notifications.html"}
-                %i.nc-icon.nc-bell-55
-                %p Notifications
-            %li
-              %a{:href => "./user.html"}
-                %i.nc-icon.nc-single-02
-                %p User Profile
-            %li
-              %a{:href => "./tables.html"}
-                %i.nc-icon.nc-tile-56
-                %p Table List
-            %li
-              %a{:href => "./typography.html"}
-                %i.nc-icon.nc-caps-small
-                %p Typography
-            %li.active-pro
-              %a{:href => "./upgrade.html"}
-                %i.nc-icon.nc-spaceship
-                %p Upgrade to PRO
+            %li{ class: "#{'active' if current_path =~ /#{donors_announcements_path}/}" }
+              = link_to donors_announcements_path do
+                %i.nc-icon.nc-email-85
+                %p Announcements
       .main-panel
         %nav.navbar.navbar-expand-lg.navbar-absolute.fixed-top.navbar-transparent
           .container-fluid

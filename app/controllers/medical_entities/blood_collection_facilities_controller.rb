@@ -29,7 +29,7 @@ module MedicalEntities
 
       respond_to do |format|
         if @blood_collection_facility.save
-          format.html { redirect_to medical_entities_blood_collection_facilities_path(@blood_collection_facility), notice: 'Blood collection facility was successfully created.' }
+          format.html { redirect_to medical_entities_blood_collection_facility_path(@blood_collection_facility), notice: 'Blood collection facility was successfully created.' }
           format.json { render :show, status: :created, location: @blood_collection_facility }
         else
           format.html { render :new }
@@ -43,7 +43,7 @@ module MedicalEntities
     def update
       respond_to do |format|
         if @blood_collection_facility.update(blood_collection_facility_params)
-          format.html { redirect_to medical_entities_blood_collection_facilities_path(@blood_collection_facility), notice: 'Blood collection facility was successfully updated.' }
+          format.html { redirect_to medical_entities_blood_collection_facility_path(@blood_collection_facility), notice: 'Blood collection facility was successfully updated.' }
           format.json { render :show, status: :ok, location: @blood_collection_facility }
         else
           format.html { render :edit }

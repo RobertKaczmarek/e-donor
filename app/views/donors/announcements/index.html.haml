@@ -1,0 +1,19 @@
+.row
+  .col-md-12
+    .card
+      .card-header
+        %h4.card-title= 'Listing Announcements'
+      .card-body
+        .table-responsive
+          %table.table
+            %thead.text-primary
+              %tr
+                %th Title
+                %th Blood collection facility
+                %th.text-right
+            %tbody
+              - @announcements.each do |announcement|
+                %tr
+                  %td= announcement.title
+                  %td= link_to announcement.blood_collection_facility, donors_blood_collection_facility_path(announcement.blood_collection_facility)
+                  %td.text-right= link_to 'Show', donors_announcement_path(announcement)

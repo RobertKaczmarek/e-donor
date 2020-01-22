@@ -67,6 +67,20 @@
                     %p.card-title= blood_alert.blood_type
                     %p
   .row
+    .col-md-12
+      .card.card-stats
+        .card-header
+          %h5.card-title Latest announcements!
+        .card-body
+          - @announcements.each do |announcement|
+            = link_to donors_announcement_path(announcement) do
+              .row
+                .col-3.col-md-3
+                  .numbers.announcement
+                    %p.card-category= announcement.content
+                    %p.card-title= announcement.title
+                    %p
+  .row
     .col-md-4
       .card
         .card-header
