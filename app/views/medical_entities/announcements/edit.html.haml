@@ -1,0 +1,11 @@
+.row
+  .col-md-12
+    .card.card-user
+      .card-header
+        %h5.card-title= 'Editing Announcement'
+      .card-body
+        = render 'form'
+
+= link_to 'Show', medical_entities_announcement_path(@announcement)
+\|
+= link_to 'Back', medical_entities_announcements_path

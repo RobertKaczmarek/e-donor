@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     resources :blood_collection_facilities
     resources :donations, only: %i[index show edit update destroy]
     resources :blood_alerts
+    resources :announcements
   end
 end

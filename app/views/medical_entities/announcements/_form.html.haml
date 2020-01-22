@@ -1,0 +1,18 @@
+-# frozen_string_literal: true
+= simple_form_for(@announcement, url: medical_entities_announcements_path) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .row
+    .col-md-10.pr-3
+      .form-group
+        = f.association :blood_collection_facility, input_html: { class: 'form-control' }
+  .row
+    .col-md-10.pr-3
+      = f.input :title, input_html: { class: 'form-control' }
+  .row
+    .col-md-10.pr-3
+      = f.input :content, input_html: { class: 'form-control' }
+  .row
+    .update.ml-auto.mr-auto
+      = f.button :submit, class: 'btn btn-success btn-round'

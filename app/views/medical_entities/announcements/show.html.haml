@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Blood collection facility
+  = link_to @announcement.blood_collection_facility, medical_entities_blood_collection_facility_path(@announcement.blood_collection_facility)
+%p
+  %b Title:
+  = @announcement.title
+%p
+  %b Content:
+  = @announcement.content
+
+= link_to 'Edit', edit_medical_entities_announcement_path(@announcement)
+\|
+= link_to 'Back', medical_entities_announcements_path
