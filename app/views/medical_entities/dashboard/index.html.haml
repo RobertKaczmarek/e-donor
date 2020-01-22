@@ -1,77 +1,41 @@
 .content
   .row
-    .col-lg-3.col-md-6.col-sm-6
+    .col-lg-4.col-md-6.col-sm-6
       .card.card-stats
         .card-body
           .row
             .col-5.col-md-4
               .icon-big.text-center.icon-warning
-                %i.nc-icon.nc-globe.text-warning
+                %i.nc-icon.nc-book-bookmark.text-info
             .col-7.col-md-8
               .numbers
-                %p.card-category Capacity
+                %p.card-category Total successful donations
                 %p.card-title
-                  150GB
+                  = @donations.attended.size
                 %p
         .card-footer
           %hr/
           .stats
-            %i.fa.fa-refresh
-            Update Now
-    .col-lg-3.col-md-6.col-sm-6
+            %i.fa.fa-heartbeat
+            = "Total donations expectations: #{@donations.size}"
+    .col-lg-4.col-md-6.col-sm-6
       .card.card-stats
         .card-body
           .row
             .col-5.col-md-4
               .icon-big.text-center.icon-warning
-                %i.nc-icon.nc-money-coins.text-success
+                %i.nc-icon.nc-zoom-split.text-danger
             .col-7.col-md-8
               .numbers
-                %p.card-category Revenue
+                %p.card-category Total blood collected
                 %p.card-title
-                  $ 1,345
+                  = "#{@donations.attended.size * 450} ml"
                 %p
         .card-footer
           %hr/
           .stats
-            %i.fa.fa-calendar-o
-            Last day
-    .col-lg-3.col-md-6.col-sm-6
-      .card.card-stats
-        .card-body
-          .row
-            .col-5.col-md-4
-              .icon-big.text-center.icon-warning
-                %i.nc-icon.nc-vector.text-danger
-            .col-7.col-md-8
-              .numbers
-                %p.card-category Errors
-                %p.card-title
-                  23
-                %p
-        .card-footer
-          %hr/
-          .stats
-            %i.fa.fa-clock-o
-            In the last hour
-    .col-lg-3.col-md-6.col-sm-6
-      .card.card-stats
-        .card-body
-          .row
-            .col-5.col-md-4
-              .icon-big.text-center.icon-warning
-                %i.nc-icon.nc-favourite-28.text-primary
-            .col-7.col-md-8
-              .numbers
-                %p.card-category Followers
-                %p.card-title
-                  +45K
-                %p
-        .card-footer
-          %hr/
-          .stats
-            %i.fa.fa-refresh
-            Update now
+            %i.fa.fa-tint
+            = "Total blood expectations: #{@donations.size * 450} ml"
   .row
     .col-md-12
       .card
