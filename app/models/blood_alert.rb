@@ -1,7 +1,7 @@
 class BloodAlert < ApplicationRecord
   belongs_to :blood_collection_facility
 
-  enum blood_type: %i[A+ A- B+ B- O+ O- AB+ AB-]
+  enum blood_type: BLOOD_TYPES
 
   def blood_type=(value)
     value = value.to_i if value.is_a? String

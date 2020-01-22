@@ -1,0 +1,1 @@
+Lockbox.master_key = '2f56b496425260671afa8b60a0a788be35d43b8d2ce9587fd29cfb7fcd2fee24'

@@ -26,6 +26,8 @@ gem 'haml-rails'
 gem 'devise'
 gem 'simple_form'
 
+gem 'lockbox'
+
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails'

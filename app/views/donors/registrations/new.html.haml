@@ -40,7 +40,7 @@
               = f.text_field :first_name, class: 'form-control', placeholder: 'First name'
               = f.text_field :last_name, class: 'form-control', placeholder: 'Last name'
               = f.input :gender, collection: Donor.genders, class: 'form-control', prompt: 'Gender', label: false
-              = f.input :blood_type, collection: Donor.blood_types, class: 'form-control', prompt: 'Blood type', label: false
+              = f.input :blood_type, collection: BLOOD_TYPES, class: 'form-control', prompt: 'Blood type', label: false
               = f.email_field :email, class: 'form-control', placeholder: 'Email'
               = f.password_field :password, class: 'form-control', placeholder: 'Password', autocomplete: 'new-password'
               = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation', autocomplete: 'new-password'

@@ -34,7 +34,7 @@ class DeviseCreateDonors < ActiveRecord::Migration[6.0]
 
       t.string :first_name, null: false, default: ''
       t.string :last_name, null: false, default: ''
-      t.integer :blood_type, null: false
+      t.text :blood_type_ciphertext
       t.integer :gender, null: false
 
       t.timestamps null: false

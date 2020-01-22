@@ -4,17 +4,16 @@ class Donor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  encrypts :blood_type, type: :string
+
   has_many :donations, dependent: :destroy
 
   enum gender: %i[male female]
-  enum blood_type: %i[A+ A- B+ B- O+ O- AB+ AB-]
 
   # to help with ArgumentError ('0' is not a valid status) errors
-  %i[gender blood_type].each do |attribute|
-    define_method :"#{attribute}=" do |value|
-      value = value.to_i if value.is_a? String
-      super(value)
-    end
+  def gender=(value)
+    value = value.to_i if value.is_a? String
+    super(value)
   end
 
   def full_name
