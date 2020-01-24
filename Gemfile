@@ -28,6 +28,8 @@ gem 'simple_form'
 
 gem 'lockbox'
 
+gem 'letter_opener'
+
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails'

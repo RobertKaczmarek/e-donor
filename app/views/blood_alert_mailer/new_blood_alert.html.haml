@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }
+  %body
+    %p
+      You got a new blood alert from #{@blood_alert.blood_collection_facility}!
+    %p
+      Blood alert details
+      %br/
+      \--------------------------
+    %p
+      Location: #{@blood_alert.blood_collection_facility.address}
+    %p
+      Blood type: #{@blood_alert.blood_type}

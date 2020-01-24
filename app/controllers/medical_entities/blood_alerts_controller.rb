@@ -29,6 +29,8 @@ module MedicalEntities
 
       respond_to do |format|
         if @blood_alert.save
+          BloodAlertMailer.with(blood_alert: @blood_alert).new_blood_alert.deliver_later
+
           format.html { redirect_to medical_entities_blood_alert_path(@blood_alert), notice: 'Blood alert was successfully created.' }
           format.json { render :show, status: :created, location: @blood_alert }
         else

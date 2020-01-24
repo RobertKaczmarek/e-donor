@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv':'Content-Type' }
+  %body
+    %p
+      You got a new announcement from #{@announcement.blood_collection_facility}!
+    %p
+      Announcement details
+      %br/
+      \--------------------------
+    %p
+      Title: #{@announcement.title.address}
+    %p
+      #{@announcement.content}
