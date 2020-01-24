@@ -9,7 +9,7 @@
         = f.association :blood_collection_facility, input_html: { class: 'form-control' }
   .row
     .col-md-10.pr-3
-      = f.input :blood_type, collection: Donor.blood_types, class: 'form-control', prompt: 'Blood type', label: false
+      = f.input :blood_type, collection: BLOOD_TYPES, class: 'form-control', prompt: 'Blood type', label: false
 
   .row
     .update.ml-auto.mr-auto
