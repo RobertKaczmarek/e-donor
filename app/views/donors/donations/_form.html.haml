@@ -3,6 +3,7 @@
   = f.hidden_field :donor_id, value: current_donor.id
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  %br/
   .row
     .col-md-10.pr-3
       .form-group

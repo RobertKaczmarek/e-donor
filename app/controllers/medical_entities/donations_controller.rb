@@ -22,7 +22,7 @@ module MedicalEntities
     def update
       respond_to do |format|
         if @donation.update(donation_params)
-          format.html { redirect_to medical_entities_donations_path(@donation), notice: 'Donation was successfully updated.' }
+          format.html { redirect_to medical_entities_donation_path(@donation), notice: 'Donation was successfully updated.' }
           format.json { render :show, status: :ok, location: @donation }
         else
           format.html { render :edit }

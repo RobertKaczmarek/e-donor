@@ -1,5 +1,5 @@
 -# frozen_string_literal: true
-= simple_form_for @donation, url: medical_entities_donations_path do |f|
+= simple_form_for @donation, url: medical_entities_donation_path(@donation) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
   .row
