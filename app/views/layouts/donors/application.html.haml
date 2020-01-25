@@ -30,23 +30,23 @@
               </div>
         .sidebar-wrapper
           %ul.nav
-            %li{ class: active_tab(donors_root_path) }
+            %li{ class: "#{'active' if current_path == donors_root_path}" }
               = link_to donors_root_path do
                 %i.nc-icon.nc-alert-circle-i
                 %p Dashboard
-            %li{ class: active_tab(donors_donations_path) }
+            %li{ class: "#{'active' if current_path =~ /#{donors_donations_path}/}" }
               = link_to donors_donations_path do
                 %i.nc-icon.nc-favourite-28
                 %p Donations
-            %li{ class: active_tab(donors_blood_collection_facilities_path) }
+            %li{ class: "#{'active' if current_path =~ /#{donors_blood_collection_facilities_path}/}" }
               = link_to donors_blood_collection_facilities_path do
                 %i.nc-icon.nc-bank
                 %p Blood collection facilities
-            %li{ class: active_tab(donors_blood_alerts_path) }
+            %li{ class: "#{'active' if current_path =~ /#{donors_blood_alerts_path}/}" }
               = link_to donors_blood_alerts_path do
                 %i.nc-icon.nc-user-run
                 %p Blood alerts
-            %li{ class: active_tab(donors_announcements_path) }
+            %li{ class: "#{'active' if current_path =~ /#{donors_announcements_path}/}" }
               = link_to donors_announcements_path do
                 %i.nc-icon.nc-email-85
                 %p Announcements
